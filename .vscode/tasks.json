@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "frontend",
+			"type": "shell",
+			"command": "cd /workspaces/koankiaBooking/frontend && yarn dev",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "backend",
+			"type": "shell",
+			"command": "bash /workspaces/koankiaBooking/backend/scripts/start-mariaDb.sh && cd /workspaces/koankiaBooking/backend && yarn develop",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "backup db",
+			"type": "shell",
+			"command": "bash /workspaces/koankiaBooking/backend/scripts/backup-mariaDb.sh",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		}
+	]
+}

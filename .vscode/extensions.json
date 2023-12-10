@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "vue.volar",
+    "wayou.vscode-todo-highlight",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-mysql",
+    "ms-azuretools.vscode-docker",
+    "actboy168.tasks",
+    "bracketpaircolordlw.bracket-pair-color-dlw",
+    "kamikillerto.vscode-colorize",
+    "c0der-himel.vscode-wev-dev-extension-pack",
+    "postman.postman-for-vscode"
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur",
+    "hookyqr.beautify",
+    "dbaeumer.jshint",
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
+}
