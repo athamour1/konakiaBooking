@@ -10,10 +10,10 @@
       "port": 3306,
       "driver": "MariaDB",
       "name": "local",
-      "database": "koankia-booking",
-      "username": "koankia-booking",
+      "database": "konakia-booking",
+      "username": "konakia-booking",
       "askForPassword": false,
-      "password": "koankia-booking",
+      "password": "konakia-booking",
       "group": "local"
     }
   ],
@@ -32,5 +32,11 @@
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
   }
 }

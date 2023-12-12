@@ -1,15 +1,14 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "koankiaBooking",
+	"name": "konakiaBooking",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bookworm",
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers/features/docker-in-docker:1": {
 			"version": "latest",
 			"moby": true
 		}
 	},
-	"postCreateCommand": "cd /workspaces/koankiaBooking/backend && yarn install && cd /workspaces/koankiaBooking/frontend && yarn install"
+	"postCreateCommand": "cd /workspaces/konakiaBooking/backend && yarn install && cd /workspaces/konakiaBooking/frontend && yarn install"
 }
