@@ -2,7 +2,11 @@
   <q-page class="flex flex-center trees-pattern-background">
     <q-card bordered class="login-card">
       <q-card-section class="bg-primary text-white">
-        <div class="text-h4 text-center">Login</div>
+        <div class="col-12">
+          <div class="text-h4 text-center row">{{ token }}</div>
+          <div class="text-h4 text-center row">{{ isAuthenticated }}</div>
+          <div class="text-h4 text-center row">{{ role }}</div>
+        </div>
       </q-card-section>
 
       <q-card-actions vertical align="center" class="bg-secondary flex flex-cetner">
@@ -22,7 +26,7 @@
             </div>
             <div class="row q-pa-md flex flex-center">
               <q-btn dense rounded color="accent" label="Login" no-caps size="lg" class="full-width"
-                @click="authStore.test(email, password)" />
+                @click="authStore.loginUser(email, password)" />
             </div>
           </div>
         </div>
@@ -41,6 +45,8 @@ export default defineComponent({
   setup() {
     const authStore = useAuthStore();
     const token = computed(() => authStore.token);
+    const isAuthenticated = computed(() => authStore.isAuthenticated);
+    const role = computed(() => authStore.role)
 
     const email = ref("");
     const password = ref("");
@@ -51,6 +57,8 @@ export default defineComponent({
       password,
       isPwd,
       token,
+      isAuthenticated,
+      role,
       authStore
     }
   }

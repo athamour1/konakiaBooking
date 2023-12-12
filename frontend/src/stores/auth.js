@@ -1,17 +1,18 @@
 // auth.js
 import { defineStore } from 'pinia'
-import axios from 'axios'
+// import axios from 'axios'
+import { api } from 'boot/axios'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
-    token: "skata",
+    token: "",
     isAuthenticated: false,
-    role: null,
+    role: {},
   }),
 
   getters: {
     getToken: (state) => state.token,
-    isAuthenticated: (state) => state.isAuthenticated,
+    getIsAuthenticated: (state) => state.isAuthenticated,
     getRole: (state) => state.role,
   },
 
@@ -35,11 +36,22 @@ export const useAuthStore = defineStore('auth', {
           "identifier": identifier,
           "password": password
         }
-        const response = await axios.post('/auth/local', credentials)
+        const response = await api.post('/api/auth/local', credentials)
         // Update state based on the response
         this.setToken(response.data.jwt)
         this.setAuthenticated(true)
-        this.setRole(response.data.role)
+
+        try {
+          const responseUserMe = await api.get('/api/users/me?populate=role', {
+            headers: {
+              Authorization: `Bearer ${response.data.jwt}`,
+            },
+          });
+          this.setRole(responseUserMe.data.role.id)
+        } catch (error) {
+          console.log('Users me:', error)
+        }
+
         return response.data
       } catch (error) {
         // Handle error and update state accordingly
@@ -50,9 +62,9 @@ export const useAuthStore = defineStore('auth', {
 
     // Example action for logging out
     logout() {
-      this.token = null
+      this.token = ""
       this.isAuthenticated = false
-      this.role = null
+      this.role = {}
     },
 
     test(x, y) {
