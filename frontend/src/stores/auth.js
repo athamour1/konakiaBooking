@@ -65,12 +65,6 @@ export const useAuthStore = defineStore('auth', {
       this.token = ""
       this.isAuthenticated = false
       this.role = {}
-    },
-
-    test(x, y) {
-      console.log("this one coming from store from login button");
-      console.log(x);
-      console.log(y);
     }
   },
 })

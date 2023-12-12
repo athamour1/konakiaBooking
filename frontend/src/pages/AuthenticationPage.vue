@@ -2,11 +2,7 @@
   <q-page class="flex flex-center trees-pattern-background">
     <q-card bordered class="login-card">
       <q-card-section class="bg-primary text-white">
-        <div class="col-12">
-          <div class="text-h4 text-center row">{{ token }}</div>
-          <div class="text-h4 text-center row">{{ isAuthenticated }}</div>
-          <div class="text-h4 text-center row">{{ role }}</div>
-        </div>
+        <div class="text-h4 text-center">Login</div>
       </q-card-section>
 
       <q-card-actions vertical align="center" class="bg-secondary flex flex-cetner">
