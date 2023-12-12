@@ -1,6 +1,6 @@
-# koankia-booking (koankia-booking)
+# konakia-booking (konakia-booking)
 
-koankia-booking
+konakia-booking
 
 ## Install the dependencies
 

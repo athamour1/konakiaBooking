@@ -1,1 +1,21 @@
 // app global css in SCSS form
+
+.login-card {
+    width: 50vw;
+    max-width: 500px;
+    min-width: 400px;
+    border-radius: 30px !important;
+}
+
+.trees-pattern-background {
+    background:
+        url(assets/trees-forest.jpg) repeat;
+}
+
+.full-height {
+    height: 100%
+}
+
+.full-width {
+    width: 100%
+}
