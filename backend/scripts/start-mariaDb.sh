@@ -26,7 +26,7 @@ fi
 display_black_text_white_background " Start MariaDB" 64
 echo
 echo
-docker run --rm -d --name my-mariadb -e MYSQL_ROOT_PASSWORD=mysecretpassword -e MYSQL_DATABASE=koankia-booking -e MYSQL_USER=koankia-booking -e MYSQL_PASSWORD=koankia-booking -p 3306:3306 mariadb  > /dev/null 2>&1
+docker run --rm -d --name my-mariadb -e MYSQL_ROOT_PASSWORD=mysecretpassword -e MYSQL_DATABASE=konakia-booking -e MYSQL_USER=konakia-booking -e MYSQL_PASSWORD=konakia-booking -p 3306:3306 mariadb  > /dev/null 2>&1
 for ((i = 1; i <= 9; i++)); do
   display_black_text_white_background " # # # #"
   sleep 1
@@ -37,4 +37,4 @@ echo
 display_black_text_white_background " Init MariaDB" 65
 echo
 echo
-docker exec -i my-mariadb sh -c 'exec mariadb -ukoankia-booking -pkoankia-booking' < /workspaces/koankiaBooking/backend/init.sql
+docker exec -i my-mariadb sh -c 'exec mariadb -ukonakia-booking -pkonakia-booking' < /workspaces/konakiaBooking/backend/init.sql
