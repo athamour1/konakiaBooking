@@ -4,8 +4,16 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { useAuthStore } from 'stores/auth'
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+  setup() {
+    const authStore = useAuthStore();
+    authStore.authInit()
+    return {}
+  }
 })
+
+
 </script>

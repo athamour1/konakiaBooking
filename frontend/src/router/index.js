@@ -1,17 +1,11 @@
 import { route } from 'quasar/wrappers'
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
-
-/*
- * If not building with SSR mode, you can
- * directly export the Router instantiation;
- *
- * The function below can be async too; either use
- * async/await or return a Promise which resolves
- * with the Router instance.
- */
+import { useAuthStore } from 'stores/auth'
 
 export default route(function (/* { store, ssrContext } */) {
+  const authStore = useAuthStore();
+
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory)
@@ -25,6 +19,25 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
+
+  // Specific beforeEnter guard for the authenticated route
+  Router.beforeEach((to, from, next) => {
+    // Check if the route requires authentication
+    const requiresAuth = to.meta.requiresAuth;
+
+    if (requiresAuth) {
+      // Check if the user is authenticated
+      const isAuthenticated = authStore.isAuthenticated;
+
+      if (!isAuthenticated) {
+        next({ path: 'login' })
+        return
+      }
+    }
+
+    // Continue to the next route
+    next();
+  });
 
   return Router
 })
