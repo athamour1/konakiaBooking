@@ -21,7 +21,8 @@
               </q-input>
             </div>
             <div class="row q-pa-md flex flex-center">
-              <q-btn dense rounded color="accent" label="Login" no-caps size="lg" class="full-width" />
+              <q-btn dense rounded color="accent" label="Login" no-caps size="lg" class="full-width"
+                @click="authStore.test(email, password)" />
             </div>
           </div>
         </div>
@@ -31,19 +32,26 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
+import { useAuthStore } from 'stores/auth'
 
 export default defineComponent({
   name: 'AuthenticationPage',
 
   setup() {
+    const authStore = useAuthStore();
+    const token = computed(() => authStore.token);
+
     const email = ref("");
     const password = ref("");
     const isPwd = ref(true);
+
     return {
       email,
       password,
-      isPwd
+      isPwd,
+      token,
+      authStore
     }
   }
 })
