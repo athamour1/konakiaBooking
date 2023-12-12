@@ -755,7 +755,7 @@ INSERT INTO `strapi_core_store_settings` VALUES
 (16,'plugin_content_manager_configuration_content_types::plugin::users-permissions.role','{\"uid\":\"plugin::users-permissions.role\",\"settings\":{\"bulkable\":true,\"filterable\":true,\"searchable\":true,\"pageSize\":10,\"mainField\":\"name\",\"defaultSortBy\":\"name\",\"defaultSortOrder\":\"ASC\"},\"metadatas\":{\"id\":{\"edit\":{},\"list\":{\"label\":\"id\",\"searchable\":true,\"sortable\":true}},\"name\":{\"edit\":{\"label\":\"name\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"name\",\"searchable\":true,\"sortable\":true}},\"description\":{\"edit\":{\"label\":\"description\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"description\",\"searchable\":true,\"sortable\":true}},\"type\":{\"edit\":{\"label\":\"type\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"type\",\"searchable\":true,\"sortable\":true}},\"permissions\":{\"edit\":{\"label\":\"permissions\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true,\"mainField\":\"action\"},\"list\":{\"label\":\"permissions\",\"searchable\":false,\"sortable\":false}},\"users\":{\"edit\":{\"label\":\"users\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true,\"mainField\":\"username\"},\"list\":{\"label\":\"users\",\"searchable\":false,\"sortable\":false}},\"createdAt\":{\"edit\":{\"label\":\"createdAt\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"createdAt\",\"searchable\":true,\"sortable\":true}},\"updatedAt\":{\"edit\":{\"label\":\"updatedAt\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"updatedAt\",\"searchable\":true,\"sortable\":true}}},\"layouts\":{\"list\":[\"id\",\"name\",\"description\",\"type\"],\"edit\":[[{\"name\":\"name\",\"size\":6},{\"name\":\"description\",\"size\":6}],[{\"name\":\"type\",\"size\":6},{\"name\":\"permissions\",\"size\":6}],[{\"name\":\"users\",\"size\":6}]]}}','object',NULL,NULL),
 (17,'plugin_upload_settings','{\"sizeOptimization\":true,\"responsiveDimensions\":true,\"autoOrientation\":false}','object',NULL,NULL),
 (18,'plugin_upload_view_configuration','{\"pageSize\":10,\"sort\":\"createdAt:DESC\"}','object',NULL,NULL),
-(19,'plugin_upload_metrics','{\"weeklySchedule\":\"36 32 18 * * 0\"}','object',NULL,NULL),
+(19,'plugin_upload_metrics','{\"weeklySchedule\":\"3 34 18 * * 0\",\"lastWeeklyUpdate\":1702233243032}','object',NULL,NULL),
 (20,'plugin_documentation_config','{\"restrictedAccess\":false}','object',NULL,NULL),
 (21,'plugin_i18n_default_locale','\"en\"','string',NULL,NULL),
 (22,'plugin_users-permissions_grant','{\"email\":{\"enabled\":true,\"icon\":\"envelope\"},\"discord\":{\"enabled\":false,\"icon\":\"discord\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/discord/callback\",\"scope\":[\"identify\",\"email\"]},\"facebook\":{\"enabled\":false,\"icon\":\"facebook-square\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/facebook/callback\",\"scope\":[\"email\"]},\"google\":{\"enabled\":false,\"icon\":\"google\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/google/callback\",\"scope\":[\"email\"]},\"github\":{\"enabled\":false,\"icon\":\"github\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/github/callback\",\"scope\":[\"user\",\"user:email\"]},\"microsoft\":{\"enabled\":false,\"icon\":\"windows\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/microsoft/callback\",\"scope\":[\"user.read\"]},\"twitter\":{\"enabled\":false,\"icon\":\"twitter\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/twitter/callback\"},\"instagram\":{\"enabled\":false,\"icon\":\"instagram\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/instagram/callback\",\"scope\":[\"user_profile\"]},\"vk\":{\"enabled\":false,\"icon\":\"vk\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/vk/callback\",\"scope\":[\"email\"]},\"twitch\":{\"enabled\":false,\"icon\":\"twitch\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/twitch/callback\",\"scope\":[\"user:read:email\"]},\"linkedin\":{\"enabled\":false,\"icon\":\"linkedin\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/linkedin/callback\",\"scope\":[\"r_liteprofile\",\"r_emailaddress\"]},\"cognito\":{\"enabled\":false,\"icon\":\"aws\",\"key\":\"\",\"secret\":\"\",\"subdomain\":\"my.subdomain.com\",\"callback\":\"api/auth/cognito/callback\",\"scope\":[\"email\",\"openid\",\"profile\"]},\"reddit\":{\"enabled\":false,\"icon\":\"reddit\",\"key\":\"\",\"secret\":\"\",\"state\":true,\"callback\":\"api/auth/reddit/callback\",\"scope\":[\"identity\"]},\"auth0\":{\"enabled\":false,\"icon\":\"\",\"key\":\"\",\"secret\":\"\",\"subdomain\":\"my-tenant.eu\",\"callback\":\"api/auth/auth0/callback\",\"scope\":[\"openid\",\"email\",\"profile\"]},\"cas\":{\"enabled\":false,\"icon\":\"book\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/cas/callback\",\"scope\":[\"openid email\"],\"subdomain\":\"my.subdomain.com/cas\"},\"patreon\":{\"enabled\":false,\"icon\":\"\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/patreon/callback\",\"scope\":[\"identity\",\"identity[email]\"]}}','object',NULL,NULL),
@@ -960,7 +960,7 @@ CREATE TABLE `up_permissions` (
   KEY `up_permissions_updated_by_id_fk` (`updated_by_id`),
   CONSTRAINT `up_permissions_created_by_id_fk` FOREIGN KEY (`created_by_id`) REFERENCES `admin_users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `up_permissions_updated_by_id_fk` FOREIGN KEY (`updated_by_id`) REFERENCES `admin_users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -978,7 +978,8 @@ INSERT INTO `up_permissions` VALUES
 (6,'plugin::users-permissions.auth.resetPassword','2023-12-10 18:27:36.470000','2023-12-10 18:27:36.470000',NULL,NULL),
 (7,'plugin::users-permissions.auth.register','2023-12-10 18:27:36.470000','2023-12-10 18:27:36.470000',NULL,NULL),
 (8,'plugin::users-permissions.auth.sendEmailConfirmation','2023-12-10 18:27:36.470000','2023-12-10 18:27:36.470000',NULL,NULL),
-(9,'plugin::users-permissions.auth.emailConfirmation','2023-12-10 18:27:36.470000','2023-12-10 18:27:36.470000',NULL,NULL);
+(9,'plugin::users-permissions.auth.emailConfirmation','2023-12-10 18:27:36.470000','2023-12-10 18:27:36.470000',NULL,NULL),
+(10,'plugin::users-permissions.role.find','2023-12-12 13:44:26.963000','2023-12-12 13:44:26.963000',NULL,NULL);
 /*!40000 ALTER TABLE `up_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1001,7 +1002,7 @@ CREATE TABLE `up_permissions_role_links` (
   KEY `up_permissions_role_links_order_inv_fk` (`permission_order`),
   CONSTRAINT `up_permissions_role_links_fk` FOREIGN KEY (`permission_id`) REFERENCES `up_permissions` (`id`) ON DELETE CASCADE,
   CONSTRAINT `up_permissions_role_links_inv_fk` FOREIGN KEY (`role_id`) REFERENCES `up_roles` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1019,7 +1020,8 @@ INSERT INTO `up_permissions_role_links` VALUES
 (6,6,2,2),
 (7,7,2,3),
 (8,8,2,3),
-(9,9,2,3);
+(9,9,2,3),
+(10,10,1,2);
 /*!40000 ALTER TABLE `up_permissions_role_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1054,7 +1056,7 @@ CREATE TABLE `up_roles` (
 LOCK TABLES `up_roles` WRITE;
 /*!40000 ALTER TABLE `up_roles` DISABLE KEYS */;
 INSERT INTO `up_roles` VALUES
-(1,'Authenticated','Default role given to authenticated user.','authenticated','2023-12-10 18:27:36.449000','2023-12-10 18:27:36.449000',NULL,NULL),
+(1,'Authenticated','Default role given to authenticated user.','authenticated','2023-12-10 18:27:36.449000','2023-12-12 13:44:26.941000',NULL,NULL),
 (2,'Public','Default role given to unauthenticated user.','public','2023-12-10 18:27:36.453000','2023-12-10 18:27:36.453000',NULL,NULL);
 /*!40000 ALTER TABLE `up_roles` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1085,7 +1087,7 @@ CREATE TABLE `up_users` (
   KEY `up_users_updated_by_id_fk` (`updated_by_id`),
   CONSTRAINT `up_users_created_by_id_fk` FOREIGN KEY (`created_by_id`) REFERENCES `admin_users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `up_users_updated_by_id_fk` FOREIGN KEY (`updated_by_id`) REFERENCES `admin_users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1094,6 +1096,8 @@ CREATE TABLE `up_users` (
 
 LOCK TABLES `up_users` WRITE;
 /*!40000 ALTER TABLE `up_users` DISABLE KEYS */;
+INSERT INTO `up_users` VALUES
+(1,'thanos98','thanosmour.tk@gmail.com','local','$2a$10$oNLPlDnLrv.gncD88TRKv.u/7Nghg1wSFYBO2FAQH1LBlI1smJhvi',NULL,NULL,1,0,'2023-12-12 13:27:45.051000','2023-12-12 13:27:45.051000',1,1);
 /*!40000 ALTER TABLE `up_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1116,7 +1120,7 @@ CREATE TABLE `up_users_role_links` (
   KEY `up_users_role_links_order_inv_fk` (`user_order`),
   CONSTRAINT `up_users_role_links_fk` FOREIGN KEY (`user_id`) REFERENCES `up_users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `up_users_role_links_inv_fk` FOREIGN KEY (`role_id`) REFERENCES `up_roles` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1125,6 +1129,8 @@ CREATE TABLE `up_users_role_links` (
 
 LOCK TABLES `up_users_role_links` WRITE;
 /*!40000 ALTER TABLE `up_users_role_links` DISABLE KEYS */;
+INSERT INTO `up_users_role_links` VALUES
+(1,1,1,1);
 /*!40000 ALTER TABLE `up_users_role_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1203,4 +1209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-10 18:28:29
+-- Dump completed on 2023-12-12 13:47:03
