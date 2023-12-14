@@ -10,5 +10,5 @@
 			"moby": true
 		}
 	},
-	"postCreateCommand": "cd /workspaces/konakiaBooking/backend && yarn install && cd /workspaces/konakiaBooking/frontend && yarn install"
+	"postCreateCommand": "cd $PWD/backend && yarn install && cd $PWD/frontend && yarn install"
 }

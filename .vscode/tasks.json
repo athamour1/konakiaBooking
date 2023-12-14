@@ -4,7 +4,7 @@
 		{
 			"label": "frontend",
 			"type": "shell",
-			"command": "cd /workspaces/konakiaBooking/frontend && yarn dev",
+			"command": "cd $PWD/frontend && yarn dev",
 			"presentation": {
 				"reveal": "always",
 				"panel": "shared"
@@ -13,7 +13,7 @@
 		{
 			"label": "backend",
 			"type": "shell",
-			"command": "bash /workspaces/konakiaBooking/backend/scripts/start-mariaDb.sh && cd /workspaces/konakiaBooking/backend && yarn develop",
+			"command": "bash $PWD/backend/scripts/start-mariaDb.sh && cd $PWD/backend && yarn develop",
 			"presentation": {
 				"reveal": "always",
 				"panel": "shared"
@@ -23,7 +23,7 @@
 		{
 			"label": "backup db",
 			"type": "shell",
-			"command": "bash /workspaces/konakiaBooking/backend/scripts/backup-mariaDb.sh",
+			"command": "bash $PWD/backend/scripts/backup-mariaDb.sh",
 			"presentation": {
 				"reveal": "always",
 				"panel": "shared"

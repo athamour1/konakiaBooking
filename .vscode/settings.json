@@ -38,5 +38,24 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "activitusbar.alignment": "Right",
+  "activitusbar.showSourceControlCounter": true,
+  "activitusbar.views": [
+    {
+      "name": "task.frontend",
+      "codicon": "circuit-board",
+      "tooltip": "Build Frontend"
+    },
+    {
+      "name": "task.backend",
+      "codicon": "flame",
+      "tooltip": "Build Backend"
+    },
+    {
+      "name": "task.backup db",
+      "codicon": "database",
+      "tooltip": "Take a backup from DB"
+    }
+  ]
 }

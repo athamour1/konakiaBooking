@@ -12,7 +12,9 @@
     "bracketpaircolordlw.bracket-pair-color-dlw",
     "kamikillerto.vscode-colorize",
     "c0der-himel.vscode-wev-dev-extension-pack",
-    "postman.postman-for-vscode"
+    "postman.postman-for-vscode",
+    "rangav.vscode-thunder-client",
+    "Gruntfuggly.activitusbar"
   ],
   "unwantedRecommendations": [
     "octref.vetur",

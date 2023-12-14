@@ -37,4 +37,4 @@ echo
 display_black_text_white_background " Init MariaDB" 65
 echo
 echo
-docker exec -i my-mariadb sh -c 'exec mariadb -ukonakia-booking -pkonakia-booking' < /workspaces/konakiaBooking/backend/init.sql
+docker exec -i my-mariadb sh -c 'exec mariadb -ukonakia-booking -pkonakia-booking' < $PWD/backend/init.sql
