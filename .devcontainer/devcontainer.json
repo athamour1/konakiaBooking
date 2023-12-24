@@ -10,5 +10,5 @@
 			"moby": true
 		}
 	},
-	"postCreateCommand": "cd $PWD/backend && yarn install && cd $PWD/frontend && yarn install"
+	"postCreateCommand": "yarn global add @quasar/cli && cd $PWD/backend && cd .. && yarn install && cd $PWD/frontend && yarn install"
 }
