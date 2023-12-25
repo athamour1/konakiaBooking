@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh LpR lfr">
-    <q-header class="" elevated v-if="isLoginPage">
-      <q-toolbar>
+    <q-header class="" v-if="isLoginPage">
+      <q-toolbar class="shadow-5 border-line-white">
         <q-toolbar-title>
           <div class="flex">
             <div class="row flex-center">
@@ -16,7 +16,7 @@
           </div>
         </q-toolbar-title>
         <q-btn flat dense icon="person" label="Login" no-caps to="login" v-if="!isAuthenticated" />
-        <q-btn flat dense icon="logout" label="Log Out" no-caps @click="logout()" v-if="isAuthenticated" />
+        <!-- <q-btn flat dense icon="logout" label="Log Out" no-caps @click="logout()" v-if="isAuthenticated" /> -->
       </q-toolbar>
     </q-header>
 
@@ -26,13 +26,13 @@
         <div class="q-py-xs q-px-sm flex-center" v-for="(item, key) in  drawerItems " :key="key">
           <div class="row flex-center">
             <q-btn class="full-width radious-50px shadow-5" color="accent" text-color="white" :label="item.buttonTitle"
-              :to="item.toPage" no-caps />
+              :to="item.toPage" @click="drawer = !drawer" no-caps />
           </div>
         </div>
         <div class="q-py-xs q-px-sm flex-center">
           <div class="row flex-center">
-            <q-btn class="full-width radious-50px shadow-5" color="accent" text-color="white" icon="logout"
-              label="Log Out" no-caps @click="logout()" v-if="isAuthenticated" />
+            <q-btn class="full-width radious-50px shadow-5" color="negative" text-color="white" icon="logout"
+              label="Log Out" no-caps @click="() => { logout(); drawer = !drawer }" v-if="isAuthenticated" />
           </div>
         </div>
       </q-scroll-area>
@@ -69,7 +69,7 @@ export default defineComponent({
         "toPage": "authenticated"
       },
       "2": {
-        "buttonTitle": "Κρατησεις",
+        "buttonTitle": "Κρατησεις 2",
         "toPage": "authenticated"
       },
       // "3": {

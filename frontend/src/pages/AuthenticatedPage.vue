@@ -1,6 +1,6 @@
 <template>
-    <q-page class="flex flex-center">
-        <div>
+    <q-page class="flex flex-center bg-background">
+        <div class="text-white">
             authenticated
         </div>
     </q-page>

@@ -26,11 +26,24 @@
 
 .q-drawer__content {
     border-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    border-width: thin;
 }
 
 .q-drawer {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0);
+}
+
+.q-header {
+    background: $background !important;
+    padding: 10px;
+}
+
+.q-toolbar {
+    background-color: $secondary;
+    border-radius: 30px;
 }
 
 .radious-50px {
@@ -39,4 +52,10 @@
 
 .bg-background {
     background: $background !important;
+}
+
+.border-line-white {
+    border-style: solid;
+    border-color: white;
+    border-width: thin;
 }
