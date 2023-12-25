@@ -8,21 +8,24 @@
       <q-card-actions vertical align="center" class="bg-secondary flex flex-cetner">
         <q-form @submit="onPressLogin()">
           <div class="flex flex-center full-width">
-            <div class="col-12 full-width">
+            <div class="col-12 full-width radious-10px">
               <div class="row q-pa-md flex flex-center">
-                <q-input dense dark rounded outlined label="Email" class="full-width" v-model="email" />
+                <q-input input-class="text-blue-grey-1" standout="bg-accent text-blue-grey-1 no-border radious-10px" dense
+                  dark label="Email" class="full-width border-line-white radious-10px" v-model="email" />
               </div>
               <div class="row q-pa-md flex flex-center">
-                <q-input dense dark rounded outlined label="Password" :type="isPwd ? 'password' : 'text'"
-                  class="full-width" v-model="password">
+                <q-input dense dark input-class="text-blue-grey-1" standout="bg-accent text-white no-border radious-10px"
+                  label="Password" :type="isPwd ? 'password' : 'text'" class="full-width border-line-white radious-10px"
+                  v-model="password">
                   <template v-slot:append>
-                    <q-icon :name="!isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer"
+                    <q-icon :name="!isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer text-blue-grey-1"
                       @click="isPwd = !isPwd" />
                   </template>
                 </q-input>
               </div>
               <div class="row q-pa-md flex flex-center">
-                <q-btn dense rounded color="accent" label="Login" no-caps size="lg" class="full-width" type="submit" />
+                <q-btn class="radious-10px full-width" dense color="accent" label="Login" no-caps size="lg" type="
+                  submit" />
               </div>
             </div>
           </div>

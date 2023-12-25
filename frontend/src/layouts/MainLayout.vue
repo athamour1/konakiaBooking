@@ -20,18 +20,17 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer class="bg-secondary shadow-5" v-model="drawer" show-if-above :width="200" :breakpoint="700" flat
-      overlay="true" :content-style="{ 'border-radius': '10px' }">
+    <q-drawer class="bg-secondary shadow-5" v-model="drawer" :width="200" :breakpoint="700" flat persistent="false">
       <q-scroll-area class="fit flex flex-center q-pt-xs">
         <div class="q-py-xs q-px-sm flex-center" v-for="(item, key) in  drawerItems " :key="key">
           <div class="row flex-center">
-            <q-btn class="full-width radious-50px shadow-5" color="accent" text-color="white" :label="item.buttonTitle"
+            <q-btn class="full-width radious-10px shadow-5" color="accent" text-color="white" :label="item.buttonTitle"
               :to="item.toPage" @click="drawer = !drawer" no-caps />
           </div>
         </div>
         <div class="q-py-xs q-px-sm flex-center">
           <div class="row flex-center">
-            <q-btn class="full-width radious-50px shadow-5" color="negative" text-color="white" icon="logout"
+            <q-btn class="full-width radious-10px shadow-5" color="negative" text-color="white" icon="logout"
               label="Log Out" no-caps @click="() => { logout(); drawer = !drawer }" v-if="isAuthenticated" />
           </div>
         </div>
