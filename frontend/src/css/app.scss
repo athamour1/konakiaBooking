@@ -23,3 +23,20 @@
 .pointer {
     cursor: pointer;
 }
+
+.q-drawer__content {
+    border-radius: 20px;
+}
+
+.q-drawer {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.radious-50px {
+    border-radius: 15px;
+}
+
+.bg-background {
+    background: $background !important;
+}

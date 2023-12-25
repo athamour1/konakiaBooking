@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated v-if="isLoginPage">
+  <q-layout view="hHh LpR lfr">
+    <q-header class="" elevated v-if="isLoginPage">
       <q-toolbar>
         <q-toolbar-title>
           <div class="flex">
@@ -9,9 +9,8 @@
                 <q-btn flat dense icon="menu" no-caps @click="() => { drawer = !drawer }" v-if="isAuthenticated" />
               </div>
               <div class="row flex-center pointer" @click="() => { router.push('/') }">
-                <div class="flex-center q-px-sm" v-if="!drawer"><img alt="konakia booking logo"
-                    src="public/icons/favicon-32x32.png"></div>
-                <div class="flex-center" v-if="!drawer">Konakia Booking</div>
+                <!-- <div class="flex-center q-px-sm"><img alt="konakia booking logo" src="/icons/favicon-32x32.png"></div> -->
+                <div class="flex-center">Konakia Booking</div>
               </div>
             </div>
           </div>
@@ -21,15 +20,19 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="drawer" show-if-above :width="200" :breakpoint="700" elevated>
-      <q-scroll-area class="fit flex flex-center">
-        <div class="row flex-center q-pa-sm pointer" @click="() => { router.push('/') }">
-          <div class="flex-center q-px-sm"><img alt="konakia booking logo" src="public/icons/favicon-32x32.png"></div>
-          <div class="flex-center">Konakia Booking</div>
-        </div>
-        <div class="q-pa-sm flex-center" v-for="(item, key) in  drawerItems " :key="key">
+    <q-drawer class="bg-secondary shadow-5" v-model="drawer" show-if-above :width="200" :breakpoint="700" flat
+      overlay="true" :content-style="{ 'border-radius': '10px' }">
+      <q-scroll-area class="fit flex flex-center q-pt-xs">
+        <div class="q-py-xs q-px-sm flex-center" v-for="(item, key) in  drawerItems " :key="key">
           <div class="row flex-center">
-            <q-btn class="full-width" :label="item.buttonTitle" :to="item.toPage" flat no-caps />
+            <q-btn class="full-width radious-50px shadow-5" color="accent" text-color="white" :label="item.buttonTitle"
+              :to="item.toPage" no-caps />
+          </div>
+        </div>
+        <div class="q-py-xs q-px-sm flex-center">
+          <div class="row flex-center">
+            <q-btn class="full-width radious-50px shadow-5" color="accent" text-color="white" icon="logout"
+              label="Log Out" no-caps @click="logout()" v-if="isAuthenticated" />
           </div>
         </div>
       </q-scroll-area>
@@ -64,7 +67,99 @@ export default defineComponent({
       "1": {
         "buttonTitle": "Κρατησεις",
         "toPage": "authenticated"
-      }
+      },
+      "2": {
+        "buttonTitle": "Κρατησεις",
+        "toPage": "authenticated"
+      },
+      // "3": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "4": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "5": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "6": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "7": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "8": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "9": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "10": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "11": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "12": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "13": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "14": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "15": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "16": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "17": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "18": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "19": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "20": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "21": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "22": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "23": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // },
+      // "24": {
+      //   "buttonTitle": "Κρατησεις",
+      //   "toPage": "authenticated"
+      // }
     })
 
     function logout() {
