@@ -68,8 +68,8 @@ export default defineComponent({
         "toPage": "authenticated"
       },
       "2": {
-        "buttonTitle": "Κρατησεις 2",
-        "toPage": "authenticated"
+        "buttonTitle": "Ημερολογιο",
+        "toPage": "callendar"
       },
       // "3": {
       //   "buttonTitle": "Κρατησεις",
